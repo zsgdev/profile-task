@@ -124,8 +124,10 @@
 
 
         <figure class="image-wrapper">
-            <img src="assets/avatar.png" alt="" width="500px" height="750px" />
-            <div class="image-block-text">"It is very important for me to have fresh, tasty products at hand."</div>
+            <div style="position: relative; width: 500px; height: 750px; background: url(./assets/avatar.PNG);">
+                <div class="image-block-text">"It is very important for me to have fresh, tasty products at hand."</div>
+            </div>
+            <!-- <img src="assets/avatar.png" alt="" width="500px" height="750px" /> -->
         </figure>
 
 
@@ -243,27 +245,33 @@
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     }
 
-    @media (min-width: 575.98px) {
-        section {
-            padding: 0 calc(50% - 270px);
+    @media (max-width: 1199.98px) {
+        header {
+            text-align: center;
         }
-    }
 
-    @media (min-width: 767.98px) {
-        section {
-            padding: 0 calc(50% - 360px);
+        article {
+            padding: 50px 50px;
         }
-    }
 
-    @media (min-width: 991.98px) {
-        section {
-            padding: 0 calc(50% - 480px);
+        .personal-info-block {
+            padding: 30px 10px;
+            justify-content: space-between;
         }
-    }
 
-    @media (min-width: 1199.98px) {
-        section {
-            padding: 0 calc(50% - 590px);
+        .grid-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
+                "header"
+                "icons"
+                "indicator"
+                "first-article"
+                "second-article"
+                "third-article"
+                "figure"
+            ;
+            background-color: black;
         }
     }
 </style>
