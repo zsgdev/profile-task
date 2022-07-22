@@ -160,11 +160,13 @@
 
     header {
         font-size: 75px;
+        animation: moveInLeft 1s ease-out;
     }
 
     .personal-info-wrapper {
         grid-area: icons;
         border: 1px solid black;
+        animation: moveInLeft 1s ease-out;
     }
 
     .personal-info-block {
@@ -185,6 +187,7 @@
 
     .indicator-wrapper {
         grid-area: indicator;
+        animation: moveInLeft 1s ease-out;
     }
 
     .indicator-block {
@@ -203,10 +206,12 @@
     .biography-wrapper {
         grid-area: first-article;
         background-color: 'blue';
+        animation: moveInBottom 1s ease-out;
     }
 
     .needs-wrapper {
         grid-area: second-article;
+        animation: moveInBottom 1s ease-out;
     }
 
     .needs-block-list {
@@ -215,6 +220,7 @@
 
     .points-wrapper {
         grid-area: third-article;
+        animation: moveInBottom 1s ease-out;
     }
 
     .fs-15px {
@@ -233,6 +239,7 @@
         position: relative;
         color: black;
         grid-area: figure;
+        animation: moveInBottom 1s ease-out;
     }
 
     .image-block-text {
@@ -248,6 +255,35 @@
         text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     }
+
+    @keyframes moveInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+
+        80% {
+            transform: translateX(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
+    @keyframes moveInBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
 
     @media (max-width: 1199.98px) {
         header {
