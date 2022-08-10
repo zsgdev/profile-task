@@ -72,15 +72,21 @@
             <div class="indicator-block">
                 <div class="indicator-item">
                     <div>Javascript</div>
-                    <img class="image-mobile-resolution" src="assets/bar1.png" alt="">
+                    <div class="progress-bar">
+                        <div class="javascript"><span>75%</span></div>
+                    </div>
                 </div>
                 <div class="indicator-item pd-top-17px">
                     <div>CSS, SCSS</div>
-                    <img class="image-mobile-resolution" src="assets/bar2.png" alt="">
+                    <div class="progress-bar">
+                        <div class="css"><span>65%</span></div>
+                    </div>
                 </div>
                 <div class="indicator-item pd-top-17px">
                     <div>Vue.js</div>
-                    <img class="image-mobile-resolution" src="assets/bar1.png" alt="">
+                    <div class="progress-bar">
+                        <div class="vue"><span>80%</span></div>
+                    </div>
                 </div>
             </div>
         </article>
@@ -137,8 +143,11 @@
 <style>
     .grid-container {
         display: grid;
+        margin-left: auto;
+        margin-right: auto;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+        width: 1650px;
         grid-template-areas:
             "header first-article figure"
             "icons second-article figure"
@@ -163,6 +172,65 @@
         animation: moveInLeft 1s ease-out;
     }
 
+    .progress-bar {
+        background: #4c4c4c;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+    }
+
+    .progress-bar div {
+        height: 5px;
+        border-radius: 5px;
+        width: 0%;
+        background-color: #fff;
+    }
+
+    .progress-bar div span {
+        height: 30px;
+        width: 30px;
+        font-size: 10px;
+        border-radius: 50%;
+        background: #222;
+        float: right;
+        margin-top: -15px;
+        margin-right: -30px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .javascript {
+        animation: javascript 1s linear forwards;
+    }
+
+    .css {
+        animation: css 1s linear forwards;
+    }
+
+    .vue {
+        animation: vue 1s linear forwards;
+    }
+
+    @keyframes javascript {
+        100% {
+            width: 75%;
+        }
+    }
+
+    @keyframes css {
+        100% {
+            width: 65%;
+        }
+    }
+
+    @keyframes vue {
+        100% {
+            width: 80%;
+        }
+    }
+
     .personal-info-wrapper {
         grid-area: icons;
         border: 1px solid black;
@@ -179,10 +247,13 @@
 
     .personal-info-item {
         width: 205px;
-        height: 87px;
+        height: 135px;
         display: flex;
         flex-direction: column;
         gap: 5px;
+        padding-inline: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .indicator-wrapper {
@@ -256,6 +327,19 @@
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     }
 
+    progress::-moz-progress-bar {
+        background: #4c4c4c;
+    }
+
+    progress::-webkit-progress-value {
+        background: #4c4c4c;
+    }
+
+    progress {
+        background: #4c4c4c;
+        color: aqua
+    }
+
     @keyframes moveInLeft {
         0% {
             opacity: 0;
@@ -304,12 +388,12 @@
         .personal-info-block {
             padding: 30px 10px;
             display: flex;
-            gap: 40px;
+            gap: 0px;
             justify-content: space-between;
         }
 
         .personal-info-item {
-            height: 100px;
+            height: 180px;
         }
 
         .image-block {
@@ -321,6 +405,7 @@
         }
 
         .grid-container {
+            width: 100%;
             font-size: 30px;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
