@@ -3,47 +3,120 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #f1f1f1;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .image-block {
+            text-align: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        blockquote {
+            margin-top: 15px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            section {
+                margin-bottom: 40px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <section class="intro" data-aos="fade-up">
-      <h1>👋 About Me</h1>
-      <p>I'm a 30-year-old full-stack developer from Astana, Kazakhstan...</p>
-    </section>
+    <div class="container">
+        <section class="intro" data-aos="fade-up">
+            <h1>👋 About Me</h1>
+            <p>I'm a 30-year-old full-stack developer from Astana, Kazakhstan. I build clean, performant web applications with passion and purpose. Outside of work, I'm all about good food, strong coffee, and keeping life in balance.</p>
+        </section>
 
-    <section class="tech" data-aos="fade-right">
-      <h2>🛠️ Tech Stack</h2>
-      <ul>
-        <li>JavaScript</li>
-        <li>CSS / SCSS</li>
-        <li>PHP / Laravel</li>
-        <li>Vue / React</li>
-      </ul>
-    </section>
+        <section class="tech" data-aos="fade-right">
+            <h2>🛠️ Tech Stack</h2>
+            <ul>
+                <li>JavaScript</li>
+                <li>CSS / SCSS</li>
+                <li>PHP / Laravel</li>
+                <li>Vue / React</li>
+            </ul>
+        </section>
 
-    <section class="goals" data-aos="fade-left">
-      <h2>🚀 Goals</h2>
-      <ul>
-        <li>Build scalable, user-friendly products</li>
-        <li>Keep a healthy and intentional lifestyle</li>
-      </ul>
-    </section>
+        <section class="goals" data-aos="fade-left">
+            <h2>🚀 Goals</h2>
+            <ul>
+                <li>Build scalable, user-friendly products</li>
+                <li>Keep a healthy and intentional lifestyle</li>
+                <li>Work with tech that creates real impact</li>
+            </ul>
+        </section>
 
-    <section class="image-block" data-aos="zoom-in">
-      <img src="assets/avatar.png" alt="Zhanibek" />
-      <blockquote>“Code smart. Live well.”</blockquote>
-    </section>
-  </div>
+        <section class="image-block" data-aos="zoom-in">
+            <img src="assets/avatar.png" alt="Zhanibek">
+            <blockquote>“Code smart. Live well.”</blockquote>
+        </section>
+    </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
