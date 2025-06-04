@@ -1,134 +1,142 @@
+/* Общая сетка */
 .grid-container {
     display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 1650px;
-    padding-top: 90px;
+    margin: 0 auto;
+    max-width: 1650px;
+    padding: 90px 20px 0;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
         "header first-article figure"
         "icons second-article figure"
         "indicator third-article figure";
+    gap: 20px;
     background-color: black;
 }
 
-.image-block {
-    position: relative;
-    width: 500px;
-    height: 750px;
-}
-
+/* Базовая типографика и фон */
 body {
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     color: white;
     background-color: black;
+    margin: 0;
+    padding: 0;
 }
 
+/* Хедер */
 header {
+    grid-area: header;
     font-size: 75px;
     line-height: 75px;
     animation: moveInLeft 1s ease-out;
 }
 
+/* Изображение */
+.image-block {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.image-wrapper {
+    grid-area: figure;
+    animation: moveInBottom 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-block-text {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 75%;
+    right: 10%;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+/* Прогресс-бары */
 .progress-bar {
     background: #4c4c4c;
     width: 100%;
     height: 5px;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .progress-bar div {
-    height: 5px;
-    border-radius: 5px;
+    height: 100%;
     width: 0%;
+    border-radius: 5px;
     background-color: #fff;
+    position: relative;
+    transition: width 1s ease-in-out;
 }
 
 .progress-bar div span {
+    position: absolute;
+    top: -20px;
+    right: 0;
     height: 40px;
     width: 40px;
     font-size: 14px;
     border-radius: 50%;
     background: #222;
-    float: right;
-    margin-top: -15px;
-    margin-right: -30px;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.javascript {
-    animation: javascript 1s linear forwards;
-}
+/* Анимации для прогрессов */
+.javascript { animation: javascript 1s linear forwards; }
+.css { animation: css 1s linear forwards; }
+.vue { animation: vue 1s linear forwards; }
 
-.css {
-    animation: css 1s linear forwards;
-}
+@keyframes javascript { 100% { width: 75%; } }
+@keyframes css { 100% { width: 65%; } }
+@keyframes vue { 100% { width: 80%; } }
 
-.vue {
-    animation: vue 1s linear forwards;
-}
-
-@keyframes javascript {
-    100% {
-        width: 75%;
-    }
-}
-
-@keyframes css {
-    100% {
-        width: 65%;
-    }
-}
-
-@keyframes vue {
-    100% {
-        width: 80%;
-    }
-}
-
+/* Разделы по сетке */
 .personal-info-wrapper {
     grid-area: icons;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     animation: moveInLeft 1s ease-out;
 }
 
 .personal-info-block {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
 }
 
 .personal-info-item {
-    width: 205px;
+    flex: 1 1 200px;
+    max-width: 220px;
+    min-width: 180px;
     height: 135px;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-inline: 10px;
+    padding: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .indicator-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
     grid-area: indicator;
-    animation: moveInLeft 1s ease-out;
-}
-
-.indicator-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: moveInLeft 1s ease-out;
 }
 
 .indicator-item {
@@ -140,19 +148,19 @@ header {
 }
 
 .biography-wrapper {
+    grid-area: first-article;
+    animation: moveInBottom 1s ease-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-area: first-article;
-    animation: moveInBottom 1s ease-out;
 }
 
 .needs-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     grid-area: second-article;
     animation: moveInBottom 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .needs-block-list {
@@ -160,159 +168,39 @@ header {
 }
 
 .points-wrapper {
+    grid-area: third-article;
+    animation: moveInBottom 1s ease-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-area: third-article;
-    animation: moveInBottom 1s ease-out;
 }
 
-.fs-15px {
-    font-size: 15px;
-}
-
-.pd-top-17px {
-    padding-top: 17px;
-}
-
-.text-color-grey {
-    color: grey;
-}
-
-.image-wrapper {
-    position: relative;
-    color: black;
-    grid-area: figure;
-    animation: moveInBottom 1s ease-out;
-}
-
-.image-block-text {
-    position: absolute;
-    width: 360px;
-    height: 105px;
-    top: 75%;
-    right: 15%;
-    font-size: 30px;
-    line-height: 35px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-}
-
+/* Общие вспомогательные классы */
+.fs-15px { font-size: 15px; }
+.pd-top-17px { padding-top: 17px; }
+.text-color-grey { color: grey; }
 .personal-info-item-title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-progress::-moz-progress-bar {
-    background: #4c4c4c;
-}
-
-progress::-webkit-progress-value {
-    background: #4c4c4c;
-}
-
-progress {
-    background: #4c4c4c;
-    color: aqua
-}
-
+/* Анимации */
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+    0% { opacity: 0; transform: translateX(-100px); }
+    80% { transform: translateX(10px); }
+    100% { opacity: 1; transform: translate(0); }
 }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translate(0); }
 }
 
+/* Медиа-запрос для мобильных и планшетов */
 @media (max-width: 1199.98px) {
-    .indicator-wrapper {
-        align-items: center;
-    }
-
-    .progress-bar {
-        width: 600px;
-        height: 10px;
-    }
-
-    .progress-bar div {
-        height: 10px;
-        border-radius: 5px;
-        width: 0%;
-        background-color: #fff;
-    }
-
-    .progress-bar div span {
-        height: 40px;
-        width: 40px;
-        font-size: 14px;
-    }
-
-    header {
-        text-align: center;
-    }
-
-    article {
-        padding: 50px 50px;
-    }
-
-    .pd-top-17px {
-        padding-top: 50px;
-    }
-
-    .image-mobile-resolution {
-        width: 550px;
-    }
-
-    .personal-info-block {
-        padding: 30px 10px;
-        display: flex;
-        gap: 0px;
-        justify-content: space-between;
-    }
-
-    .personal-info-item {
-        height: 180px;
-        width: 310px;
-    }
-
-    .image-block {
-        margin: auto;
-    }
-
-    .fs-15px {
-        font-size: 40px;
-    }
-
     .grid-container {
-        width: 100%;
-        font-size: 30px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
         grid-template-areas:
             "header"
             "icons"
@@ -320,8 +208,45 @@ progress {
             "first-article"
             "second-article"
             "third-article"
-            "figure"
-        ;
-        background-color: black;
+            "figure";
+        font-size: 16px;
+        padding: 50px 20px;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 10px;
+    }
+
+    .progress-bar div span {
+        font-size: 12px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .personal-info-block {
+        gap: 15px;
+        padding: 20px 10px;
+        justify-content: center;
+    }
+
+    .personal-info-item {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .fs-15px { font-size: 20px; }
+    .pd-top-17px { padding-top: 30px; }
+
+    .image-mobile-resolution {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    header {
+        text-align: center;
+        font-size: 48px;
+        line-height: 1.2;
     }
 }
