@@ -6,87 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="grid-container">
-        <header class="fancy-header">Zhanibek Sundetov</header>
+  <div class="container">
+    <section class="intro" data-aos="fade-up">
+      <h1>👋 About Me</h1>
+      <p>I'm a 30-year-old full-stack developer from Astana, Kazakhstan...</p>
+    </section>
 
-        <figure class="image-wrapper">
-            <div class="image-block">
-                <img src="assets/avatar.png" alt="Avatar">
-                <div class="quote">“Code smart. Live well.”</div>
-            </div>
-        </figure>
+    <section class="tech" data-aos="fade-right">
+      <h2>🛠️ Tech Stack</h2>
+      <ul>
+        <li>JavaScript</li>
+        <li>CSS / SCSS</li>
+        <li>PHP / Laravel</li>
+        <li>Vue / React</li>
+      </ul>
+    </section>
 
-        <section class="panel bio">
-            <h2>👋 About Me</h2>
-            <p>
-                I’m a 30-year-old full-stack developer from Astana, Kazakhstan.
-                I build clean, performant web applications with passion and purpose. Outside of work, I'm all about good food, strong coffee, and keeping life in balance.
-            </p>
-        </section>
+    <section class="goals" data-aos="fade-left">
+      <h2>🚀 Goals</h2>
+      <ul>
+        <li>Build scalable, user-friendly products</li>
+        <li>Keep a healthy and intentional lifestyle</li>
+      </ul>
+    </section>
 
-        <section class="panel tech">
-            <h2>🛠 Tech Stack</h2>
-            <div class="progress-list">
-                <div class="progress-item">
-                    <span>JavaScript</span>
-                    <div class="bar" style="--progress: 90%"></div>
-                </div>
-                <div class="progress-item">
-                    <span>CSS / SCSS</span>
-                    <div class="bar" style="--progress: 80%"></div>
-                </div>
-                <div class="progress-item">
-                    <span>PHP / Laravel</span>
-                    <div class="bar" style="--progress: 85%"></div>
-                </div>
-                <div class="progress-item">
-                    <span>Vue / React</span>
-                    <div class="bar" style="--progress: 75%"></div>
-                </div>
-            </div>
-        </section>
+    <section class="image-block" data-aos="zoom-in">
+      <img src="assets/avatar.png" alt="Zhanibek" />
+      <blockquote>“Code smart. Live well.”</blockquote>
+    </section>
+  </div>
 
-        <section class="panel info">
-            <h2>📇 Quick Facts</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <img src="assets/briefcase.png" alt="">
-                    <span>Full-stack Developer</span>
-                </div>
-                <div class="info-card">
-                    <img src="assets/location.png" alt="">
-                    <span>Astana, KZ</span>
-                </div>
-                <div class="info-card">
-                    <img src="assets/person.png" alt="">
-                    <span>30 y.o.</span>
-                </div>
-                <div class="info-card">
-                    <img src="assets/home.png" alt="">
-                    <span>Independent</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="panel needs">
-            <h2>🚀 Goals</h2>
-            <ul>
-                <li>Build scalable, user-friendly products.</li>
-                <li>Keep a healthy and intentional lifestyle.</li>
-                <li>Work with tech that creates real impact.</li>
-            </ul>
-        </section>
-
-        <section class="panel pains">
-            <h2>⚠️ Challenges</h2>
-            <p>
-                Staying focused while juggling multiple roles, and finding time for health and creativity in the fast-paced dev world.
-            </p>
-        </section>
-    </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
